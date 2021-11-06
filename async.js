@@ -36,12 +36,13 @@ function addStudent(student) {
 
 }
 
-addStudent({
-    firstname:'eyuel',
-    lastname:'sahilu',
-    desc:'alcholic'
-})
-.then(getStudents)
-.catch(err=>console.log(err))
+async function excute(){
+   await addStudent({
+        firstname:'eyuel',
+        lastname:'sahilu',
+        desc:'alcholic'
+    });
+    getStudents();
+}
 
-
+excute();
