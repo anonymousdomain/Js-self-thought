@@ -25,7 +25,7 @@ function addStudent(student) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             students.push(student);
-            err = false;
+            err = true;
             if (!err) {
                 resolve();
             } else {
@@ -40,4 +40,6 @@ addStudent({
     firstname:'eyuel',
     lastname:'sahilu',
     desc:'alcholic'
-}).then(getStudents);
+})
+.then(getStudents)
+.catch(err=>console.log(err))
