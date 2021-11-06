@@ -21,4 +21,14 @@ function getStudents() {
     }, 1000);
 }
 
+function addStudent(student){
+    setTimeout(()=>{
+        students.push(student);
+    },2000)
+}
+
 getStudents();
+
+addStudent({firstname:'eyuel',
+lastname:'sahilu',
+desc:'alcholic'});
