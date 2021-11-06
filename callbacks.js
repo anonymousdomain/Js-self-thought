@@ -1,4 +1,4 @@
-const students= [
+const students = [
     {
         firstname: 'dawit',
         lastname: 'mekonnen',
@@ -17,18 +17,21 @@ function getStudents() {
         students.forEach((student) => {
             list += `<li>${student.desc}</li>`;
         });
-       document.body.innerHTML=list;
+        document.body.innerHTML = list;
     }, 1000);
 }
 
-function addStudent(student){
-    setTimeout(()=>{
+function addStudent(student, callback) {
+    setTimeout(() => {
         students.push(student);
-    },2000)
+        callback()
+    }, 2000)
 }
 
-getStudents();
 
-addStudent({firstname:'eyuel',
-lastname:'sahilu',
-desc:'alcholic'});
+
+addStudent({
+    firstname: 'eyuel',
+    lastname: 'sahilu',
+    desc: 'alcholic'
+}, getStudents);
